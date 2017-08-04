@@ -1,0 +1,61 @@
+
+
+create table member (
+         no         number      constraint user_no primary key
+       , id		    varchar2(60)
+       , nick	    varchar2(10)
+       , pw		    varchar2(30)
+       , auth	    varchar2(10)
+       , reg_date	date
+       , reg_user   varchar2(60)
+       , mod_date   date
+       , mod_user   varchar2(60)
+       )
+       ;
+create table board(
+          no		number          constraint board_no primary key
+        , title		varchar2(100)
+        , content	varchar2(4000)
+        , read		number
+        , like_cnt	number
+        , reg_date	date
+        , reg_user   varchar2(60)
+        , mod_date   date
+        , mod_user   varchar2(60)
+)
+  ;
+create table reply(
+          board_no		number 
+        , no			number      
+        , content		varchar2(1000)
+        , like_cnt		number
+        , reg_date		date
+        , reg_user		varchar2(60)
+        , mod_date		date
+        , mod_user	varchar2(60)
+        , constraint reply_pk primary key (board_no, no)
+);
+
+create table common_code(
+       grp_cd   varchar2(10)
+     , id       varchar2(10)
+     , name     varchar2(20)
+     , str      varchar2(50)
+     , reg_date	 date
+     , reg_user   varchar2(60)
+     , mod_date   date
+     , mod_user   varchar2(60)
+     , constraint common_code_pk primary key (grp_cd, id)
+     )
+;
+
+create table grp_code(
+       grp_cd   varchar2(10)
+     , name     varchar2(20)
+     , reg_date	 date
+     , reg_user   varchar2(60)
+     , mod_date   date
+     , mod_user   varchar2(60)
+     , constraint grp_code_pk primary key (grp_cd)
+     )
+;
