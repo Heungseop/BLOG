@@ -31,7 +31,9 @@
 				<c:forEach items="${list }" var="row">
 					<tr>
 						<td>${row.NO }</td>
-						<td style="text-align:center;">${row.STR1 }</td>
+						<td style="text-align:center;">
+							<a href="/board/boardView.do">${row.STR1 }</a>
+						</td>
 						<td>${row.HIT_CNT }</td>
 						<td>${row.CREA_DTM }</td>
 					</tr>
