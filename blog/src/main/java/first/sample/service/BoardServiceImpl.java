@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 
 import first.sample.dao.DAO;
 
-@Service("CommonService")
-public class CommonServiceImpl implements CommonService{
+@Service("BoardService")
+public class BoardServiceImpl implements BoardService{
 	Logger log = Logger.getLogger(this.getClass());
 	
 	@Resource(name="DAO")

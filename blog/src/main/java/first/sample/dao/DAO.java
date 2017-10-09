@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import first.common.dao.AbstractDAO;
 
-@Repository("sampleDAO")
-public class SampleDAO extends AbstractDAO{
+@Repository("DAO")
+public class DAO extends AbstractDAO{
 
 	@SuppressWarnings("unchecked")
 	public List<Map<String, Object>> selectBoardList(Map<String, Object> map) throws Exception{
