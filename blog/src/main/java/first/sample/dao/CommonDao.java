@@ -7,12 +7,21 @@ import org.springframework.stereotype.Repository;
 
 import first.common.dao.AbstractDAO;
 
-@Repository("DAO")
-public class DAO extends AbstractDAO{
+@Repository("CommonDao")
+public class CommonDao extends AbstractDAO{
 
 	@SuppressWarnings("unchecked")
-	public List<Map<String, Object>> selectBoardList(Map<String, Object> map) throws Exception{
-		return (List<Map<String, Object>>)selectList("sample.selectBoardList", map);
+	public List<Map<String, Object>> selectBigMenuList() throws Exception{
+		return (List<Map<String, Object>>)selectList("common.selectBigMenuList");
 	}
+	@SuppressWarnings("unchecked")
+	public List<Map<String, Object>> selectMidMenuList() throws Exception{
+		return (List<Map<String, Object>>)selectList("common.selectMidMenuList");
+	}
+//	
+//	@SuppressWarnings("unchecked")
+//	public List<Map<String, Object>> selectMenuList(Map<String, Object> map) throws Exception{
+//		return (List<Map<String, Object>>)selectList("common.selectMenuList", map);
+//	}
 
 }

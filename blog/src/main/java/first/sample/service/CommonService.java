@@ -5,6 +5,7 @@ import java.util.Map;
 
 public interface CommonService {
 
-	List<Map<String, Object>> selectBoardList(Map<String, Object> map) throws Exception;
+	List<Map<String, Object>> selectBigMenuList() throws Exception;
+	List<Map<String, Object>> selectMidMenuList() throws Exception;
 
 }

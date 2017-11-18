@@ -1,0 +1,202 @@
+
+insert into grp_code(
+   grp_cd   	
+ , nm     		
+ , reg_date	 
+ , reg_user   
+ , mod_date   
+ , mod_user   
+ )values(
+   'menu_1'   	
+ , '대메뉴'     		
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+ );
+insert into grp_code(
+   grp_cd   	
+ , nm     		
+ , reg_date	 
+ , reg_user   
+ , mod_date   
+ , mod_user   
+ )values(
+   'menu_2'   	
+ , '중메뉴'     		
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+ );
+insert into COMMON_CODE (
+              grp_cd  
+            , cd      
+            , nm    
+            , str     
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_1'  
+            , 1
+            , '흥섭'    
+            , 'menu_heung'     
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+insert into COMMON_CODE (
+              grp_cd  
+            , cd      
+            , nm    
+            , str     
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_1'  
+            , 2
+            , '춘우'    
+            , 'menu_chun_woo'     
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+insert into COMMON_CODE (
+              grp_cd  
+            , cd      
+            , nm    
+            , str     
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_1'  
+            , 3
+            , '다원'    
+            , 'menu_da_won'     
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+
+insert into grp_code(
+   grp_cd   	
+ , nm     		
+ , reg_date	 
+ , reg_user   
+ , mod_date   
+ , mod_user   
+ )values(
+   'menu_heung'   	
+ , '흥섭 메뉴'     		
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+ );
+ 
+insert into grp_code(
+   grp_cd   	
+ , nm     		
+ , reg_date	 
+ , reg_user   
+ , mod_date   
+ , mod_user   
+ )values(
+   'menu_chun_woo'   	
+ , '춘우 메뉴'     		
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+ );
+ 
+insert into grp_code(
+   grp_cd   	
+ , nm     		
+ , reg_date	 
+ , reg_user   
+ , mod_date   
+ , mod_user   
+ )values(
+   'menu_da_won'   	
+ , '다원 메뉴'     		
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+ );
+ 
+insert into COMMON_CODE (
+              grp_cd  
+            , cd      
+            , nm    
+            , str     
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_heung'  
+            , (select nvl(max(cd), 0) + 1 from COMMON_CODE where grp_cd = 'menu_heung')
+            , 'data base'  --, 'script'    , 'java'    , 'android'   
+            , null     
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+--select * from COMMON_CODE;
+insert into COMMON_CODE (
+              grp_cd  
+            , cd      
+            , nm    
+            , str     
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_chun_woo'  
+            , (select nvl(max(cd), 0) + 1 from COMMON_CODE where grp_cd = 'menu_chun_woo')
+            , 'html'  --, 'script'    , 'jquery'    , 'Ajax'   
+            , null     
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+insert into COMMON_CODE (
+              grp_cd  
+            , cd      
+            , nm    
+            , str     
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_da_won'  
+            , (select nvl(max(cd), 0) + 1 from COMMON_CODE where grp_cd = 'menu_da_won')
+            , 'C#'   
+            , null     
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+         

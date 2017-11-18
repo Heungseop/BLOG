@@ -15,6 +15,7 @@
 			<bean id="loggerInterceptor" class="first.common.logger.LoggerInterceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
+	<mvc:annotation-driven />
 	
     <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
     

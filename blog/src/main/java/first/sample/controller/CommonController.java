@@ -1,13 +1,20 @@
 package first.sample.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.util.JSONPObject;
+import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import first.sample.service.CommonService;
@@ -19,35 +26,29 @@ public class CommonController {
 	@Resource(name="CommonService")
 	private CommonService commonService;
 
-	@RequestMapping(value="/common/openSampleBoardList.do")
-    public ModelAndView openSampleBoardList(Map<String,Object> commandMap) throws Exception{
-		System.out.println("/common/openSampleBoardList.do");
-    	ModelAndView mv = new ModelAndView("/sample/boardList");
-    	
-    	List<Map<String,Object>> list = commonService.selectBoardList(commandMap);
-    	mv.addObject("list", list);
-    	
-    	return mv;
-    }
-
 	@RequestMapping(value="/common/main.do")
-    public ModelAndView main(Map<String,Object> commandMap) throws Exception{
-		System.out.println("/common/openSampleBoardList.do");
+    public ModelAndView main(Map<String, Object> commandMap) throws Exception{
     	ModelAndView mv = new ModelAndView("/src/main");
-    	
-    	List<Map<String,Object>> list = commonService.selectBoardList(commandMap);
-    	mv.addObject("list", list);
-    	
     	return mv;
     }
+	
+	@RequestMapping(value="/common/getMenuInfo.do", method=RequestMethod.POST)
+	public @ResponseBody HashMap<String, List> getMenuInfo(HttpServletResponse response) throws Exception{
+		HashMap<String, List> hm = new HashMap<String, List>();
+		
+		hm.put("bigMenuList", commonService.selectBigMenuList());
+		hm.put("midMenuList", commonService.selectMidMenuList());
+
+		return hm;
+	}
 	
 	@RequestMapping(value="/common/profile.do")
 	public ModelAndView profile(Map<String,Object> commandMap) throws Exception{
 		System.out.println("/common/openSampleBoardList.do");
 		ModelAndView mv = new ModelAndView("/profile/profile");
 		
-		List<Map<String,Object>> list = commonService.selectBoardList(commandMap);
-		mv.addObject("list", list);
+//		List<Map<String,Object>> list = commonService.selectMenuList(commandMap);
+//		mv.addObject("list", list);
 		
 		return mv;
 	}
@@ -57,8 +58,8 @@ public class CommonController {
 		System.out.println("/common/openSampleBoardList.do");
 		ModelAndView mv = new ModelAndView("/profile/contacts");
 		
-		List<Map<String,Object>> list = commonService.selectBoardList(commandMap);
-		mv.addObject("list", list);
+//		List<Map<String,Object>> list = commonService.selectMenuList(commandMap);
+//		mv.addObject("list", list);
 		
 		return mv;
 	}
@@ -68,8 +69,8 @@ public class CommonController {
 		System.out.println("/common/openSampleBoardList.do");
 		ModelAndView mv = new ModelAndView("/profile/mailbox");
 		
-		List<Map<String,Object>> list = commonService.selectBoardList(commandMap);
-		mv.addObject("list", list);
+//		List<Map<String,Object>> list = commonService.selectMenuList(commandMap);
+//		mv.addObject("list", list);
 		
 		return mv;
 	}
@@ -79,8 +80,8 @@ public class CommonController {
 		System.out.println("/common/openSampleBoardList.do");
 		ModelAndView mv = new ModelAndView("/profile/login");
 		
-		List<Map<String,Object>> list = commonService.selectBoardList(commandMap);
-		mv.addObject("list", list);
+//		List<Map<String,Object>> list = commonService.selectMenuList(commandMap);
+//		mv.addObject("list", list);
 		
 		return mv;
 	}

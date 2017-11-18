@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="common">
+	
+	<select id="selectBigMenuList" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[
+			  select a.grp_cd
+			       , b.CD
+			       , b.NM
+			       , b.str
+			    from grp_code a
+			       , common_code b
+			   where a.grp_cd = 'menu_1'
+			     and a.GRP_CD = b.GRP_CD(+)
+			    order by b.ord_no
+		]]>
+	</select>
+	
+	<select id="selectMidMenuList" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[
+  select c.GRP_CD   as big_menu_cd
+       , b.nm       as big_menu_nm
+       , d.cd       as mid_menu_cd
+       , d.nm       as mid_menu_nm
+    from grp_code a
+       , common_code b
+       , grp_code c
+       , common_code d
+    where a.grp_cd = 'menu_1'
+      and a.GRP_CD = b.GRP_CD(+)
+      and b.STR = c.grp_cd(+)
+      and c.GRP_CD = d.GRP_CD(+)
+    order by b.ord_no, d.ord_no
+		]]>
+	</select>
+	
+</mapper>

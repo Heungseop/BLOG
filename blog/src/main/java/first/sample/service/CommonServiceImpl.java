@@ -8,19 +8,26 @@ import javax.annotation.Resource;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
-import first.sample.dao.DAO;
+import first.sample.dao.CommonDao;
 
 @Service("CommonService")
 public class CommonServiceImpl implements CommonService{
 	Logger log = Logger.getLogger(this.getClass());
 	
-	@Resource(name="DAO")
-	private DAO dao;
+	@Resource(name="CommonDao")
+	private CommonDao dao;
 	
 	@Override
-	public List<Map<String, Object>> selectBoardList(Map<String, Object> map) throws Exception {
-		return dao.selectBoardList(map);
-		
+	public List<Map<String, Object>> selectBigMenuList() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.selectBigMenuList();
 	}
+
+	@Override
+	public List<Map<String, Object>> selectMidMenuList() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.selectMidMenuList();
+	}
+
 
 }
