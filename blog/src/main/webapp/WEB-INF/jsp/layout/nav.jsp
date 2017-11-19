@@ -1,25 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-
-<script>
-$(document).ready(function(){
-
-	$.ajax({
-		   url: "${pageContext.request.contextPath}" + "/common/getMenuInfo.do",
-		   type : "POST",
-		   success: function(result) {
-			   console.log("success json : ", result);
-			   var bigMenuList = result.bigMenuList;
-			   var midMenuList = result.midMenuList;
-// 			   $("#side-menu").append();
-		   },
-		   error: function(error) {
-		      console.log(error);
-		   }
-		});
-	
-});
-
-</script>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <nav class="navbar-default navbar-static-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav metismenu" id="side-menu">
@@ -48,7 +28,6 @@ $(document).ready(function(){
                             IN+
                         </div>
                     </li>
-                    
                     <c:forEach items="${bigMenuList }" var="bigItem">
 	                    <li>
 	                        <a href="index.html">

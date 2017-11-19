@@ -70,14 +70,42 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
+
+// 		$.ajax({
+// 			   url: "${pageContext.request.contextPath}" + "/common/getMenuInfo.do",
+// 			   type : "POST",
+// 			   success: function(result) {
+// 				   console.log("success json : ", result);
+// 				   var bigMenuList = result.bigMenuList;
+// 				   var midMenuList = result.midMenuList;
+				   
+// 				   var str = "";
+// 				   for(var i = 0; i < bigMenuList.length; i++){
+// 					   str += "<li><a href=''><i class='fa fa-th-large'></i>";
+// 					   str += "<span class='nav-label'>" + bigMenuList[i].NM + "</span>";
+// 					   str += "<span class='fa arrow'></span></a><ul class='nav nav-second-level'>";
+// 					   for(var j = 0; j < midMenuList.length; j++){
+// 						   if(bigMenuList[i].STR == midMenuList[j].BIG_MENU_CD){
+// 						       str += "<li><a href='index.html'>" + midMenuList[j].MID_MENU_NM + "</a></li>";
+							   
+// 						   }
+// 					   }
+// 		               str += "</ul></li>";
+// 				   }
+// 	               console.log("str : ", str);
+// 				   $("#side-menu").append(str);
+// 			   },
+// 			   error: function(error) {
+// 			      console.log(error);
+// 			   }
+// 			});
 	});
 </script>
 </head>
 <body>
-	<br>
-	<div id="header">
-		<tiles:insertAttribute name="header" />
-	</div>
+<!-- 	<div id="header"> -->
+<%-- 		<tiles:insertAttribute name="header" /> --%>
+<!-- 	</div> -->
 	
     <div id="wrapper">
 	        
@@ -89,8 +117,8 @@
 			<tiles:insertAttribute name="body" />
 		</div>
 	</div>
-	<div id="footer">
-		<tiles:insertAttribute name="footer" />
-	</div>
+<!-- 	<div id="footer"> -->
+<%-- 		<tiles:insertAttribute name="footer" /> --%>
+<!-- 	</div> -->
 </body>
 </html>

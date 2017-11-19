@@ -29,6 +29,10 @@ public class CommonController {
 	@RequestMapping(value="/common/main.do")
     public ModelAndView main(Map<String, Object> commandMap) throws Exception{
     	ModelAndView mv = new ModelAndView("/src/main");
+
+    	mv.addObject("bigMenuList", commonService.selectBigMenuList());
+    	mv.addObject("midMenuList", commonService.selectMidMenuList());
+		
     	return mv;
     }
 	
