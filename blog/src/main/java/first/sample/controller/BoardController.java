@@ -18,9 +18,9 @@ public class BoardController {
 	@Resource(name="BoardService")
 	private BoardService boardService;
 	
-	@RequestMapping(value="/board/boardView.do")
+	@RequestMapping(value="/board/boardList.do")
     public ModelAndView openSampleBoardList(Map<String,Object> commandMap) throws Exception{
-    	ModelAndView mv = new ModelAndView("/boardView");
+    	ModelAndView mv = new ModelAndView("/board/boardList");
     	
 //    	List<Map<String,Object>> list = boardService.selectBoardList(commandMap);
 //    	mv.addObject("list", list);

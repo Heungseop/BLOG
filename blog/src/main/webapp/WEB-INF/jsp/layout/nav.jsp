@@ -38,7 +38,7 @@
 	                        <ul class="nav nav-second-level">
                    				<c:forEach items="${midMenuList }" var="midItem">
                    					<c:if test="${bigItem.STR == midItem.BIG_MENU_CD }" >
-		                            	<li><a href="index.html">${midItem.MID_MENU_NM }</a></li>
+		                            	<li><a href="board/boardList.do">${midItem.MID_MENU_NM }</a></li>
                    					</c:if>
                     			</c:forEach>
 	                        </ul>
