@@ -37,8 +37,8 @@
 	                       	</a>
 	                        <ul class="nav nav-second-level">
                    				<c:forEach items="${midMenuList }" var="midItem">
-                   					<c:if test="${bigItem.STR == midItem.BIG_MENU_CD }" >
-		                            	<li><a href="board/boardList.do">${midItem.MID_MENU_NM }</a></li>
+                   					<c:if test="${bigItem.CD == midItem.BIG_MENU_CD }" >
+		                            	<li><a href="#" onclick="menuClick('${midItem.BIG_MENU_CD }', ${midItem.MID_MENU_CD })">${midItem.MID_MENU_NM }</a></li>
                    					</c:if>
                     			</c:forEach>
 	                        </ul>
@@ -49,3 +49,42 @@
 
             </div>
         </nav>
+<script>
+
+function menuClick(big_menu_cd, mid_menu_cd){
+
+		$.ajax({
+			   url: "${pageContext.request.contextPath}" + "/empty/board/boardList.do",
+			   type : "POST",
+			   data : { big_menu_cd : big_menu_cd
+				   	  , mid_menu_cd : mid_menu_cd
+				   	  },
+			   success: function(result) {
+				   console.log("success result : ", result);
+// 				   var bigMenuList = result.bigMenuList;
+// 				   var midMenuList = result.midMenuList;
+			   
+// 				   var str = "";
+// 				   for(var i = 0; i < bigMenuList.length; i++){
+// 					   str += "<li><a href=''><i class='fa fa-th-large'></i>";
+// 					   str += "<span class='nav-label'>" + bigMenuList[i].NM + "</span>";
+// 					   str += "<span class='fa arrow'></span></a><ul class='nav nav-second-level'>";
+// 					   for(var j = 0; j < midMenuList.length; j++){
+// 						   if(bigMenuList[i].STR == midMenuList[j].BIG_MENU_CD){
+// 						       str += "<li><a href='index.html'>" + midMenuList[j].MID_MENU_NM + "</a></li>";
+						   
+// 						   }
+// 					   }
+// 		               str += "</ul></li>";
+// 				   }
+// 	               console.log("str : ", str);
+				   $("#body_div").empty();
+				   $("#body_div").append(result);
+			   },
+			   error: function(error) {
+			      console.log(error);
+			   }
+			});
+	
+}
+</script>

@@ -5,12 +5,14 @@
 	
 	<select id="selectBigMenuList" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[
+
 			  select a.grp_cd
 			       , b.CD
 			       , b.NM
-			       , b.str
-			    from grp_code a
-			       , common_code b
+			       , b.str1
+                   , b.ord_no
+			    from grp_cd a
+			       , cmmn_cd b
 			   where a.grp_cd = 'menu_1'
 			     and a.GRP_CD = b.GRP_CD(+)
 			    order by b.ord_no
@@ -19,19 +21,38 @@
 	
 	<select id="selectMidMenuList" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[
-  select c.GRP_CD   as big_menu_cd
-       , b.nm       as big_menu_nm
-       , d.cd       as mid_menu_cd
-       , d.nm       as mid_menu_nm
-    from grp_code a
-       , common_code b
-       , grp_code c
-       , common_code d
+  select b.cd   as big_menu_cd
+       , b.nm	as big_menu_nm
+       , d.cd	as mid_menu_cd
+       , d.nm	as mid_menu_nm
+       , b.ord_no
+       , d.ord_no
+    from grp_cd a
+       , cmmn_cd b
+--       , grp_cd c
+       , cmmn_cd d
     where a.grp_cd = 'menu_1'
       and a.GRP_CD = b.GRP_CD(+)
-      and b.STR = c.grp_cd(+)
-      and c.GRP_CD = d.GRP_CD(+)
+      and d.grp_cd = 'menu_2'
+      and b.cd = d.up_cd
     order by b.ord_no, d.ord_no
+		]]>
+	</select>
+		<select id="selectBoard" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[
+		
+    select big_menu_cd
+		 , mid_menu_cd
+		 , no
+		 , title
+		 , read_cnt
+		 , like_cnt
+		 , reg_date
+		 , reg_user
+      from board
+     where big_menu_cd = #{big_menu_cd}
+       and mid_menu_cd = #{mid_menu_cd}
+       
 		]]>
 	</select>
 	

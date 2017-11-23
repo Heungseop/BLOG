@@ -1,0 +1,34 @@
+
+	insert into board (
+		   big_menu_cd
+		 , mid_menu_cd
+		 , no
+		 , title
+		 , content
+		 , read_cnt
+		 , like_cnt
+		 , reg_date
+		 , reg_user
+		 , mod_date
+		 , mod_user
+		 ) values
+		 ( 'menu_heung'
+		 , '1'
+		 , (select nvl(max(no), 0) + 1 
+		 	  from board 
+		 	 where big_menu_cd = 'menu_heung' 
+		 	   and mid_menu_cd = '1'
+	 	   )
+		 , (select nvl(max(no), 0) + 1 
+		 	  from board 
+		 	 where big_menu_cd = 'menu_heung' 
+		 	   and mid_menu_cd = '1'
+	 	   ) || ' test title'
+		 , 'CONTENT'
+		 , 0
+		 , 0
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+		 )

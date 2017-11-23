@@ -1,4 +1,11 @@
 
+--
+--drop table member;
+--drop table board;
+--drop table reply;
+--drop table cmmn_cd;
+--drop table grp_cd;
+
 
 create table member (
          no         number      constraint user_no primary key
@@ -12,19 +19,23 @@ create table member (
        , mod_user   varchar2(60)
        )
        ;
+       
 create table board(
-          no		number          constraint board_no primary key
-        , board_kind varchar2(10)
-        , title		varchar2(100)
-        , content	varchar2(4000)
-        , read		number
-        , like_cnt	number
-        , reg_date	date
-        , reg_user   varchar2(60)
-        , mod_date   date
-        , mod_user   varchar2(60)
+          big_menu_cd 	varchar2(20)
+        , mid_menu_cd 	varchar2(20)
+        , no			number
+        , title			varchar2(100)
+        , content		varchar2(4000)
+        , read_cnt		number
+        , like_cnt		number
+        , reg_date		date
+        , reg_user   	varchar2(60)
+        , mod_date   	date
+        , mod_user   	varchar2(60)
+        , constraint board_no primary key (big_menu_cd, mid_menu_cd, no)
 )
   ;
+  
 create table reply(
           board_no		number 
         , no			number      
@@ -37,22 +48,23 @@ create table reply(
         , constraint reply_pk primary key (board_no, no)
 );
 
-create table common_code(
-       grp_cd   varchar2(100)
-     , cd     varchar2(20)
-     , nm     varchar2(100)
-     , str      varchar2(100)
---     , ord_no	number
-     , reg_date	 date
-     , reg_user   varchar2(60)
-     , mod_date   date
-     , mod_user   varchar2(60)
-     , constraint common_code_pk primary key (grp_cd, nm)
+create table cmmn_cd(
+       grp_cd   	varchar2(100)
+     , cd     		varchar2(20)
+     , nm     		varchar2(100)
+     , up_cd		varchar2(20)
+     , str1     	varchar2(100)
+     , str2     	varchar2(100)
+     , ord_no		number
+     , reg_date	 	date
+     , reg_user   	varchar2(60)
+     , mod_date   	date
+     , mod_user   	varchar2(60)
+     , constraint common_code_pk primary key (grp_cd, cd)
      )
 ;
-
-create table grp_code(
-       grp_cd   	varchar2(10)
+create table grp_cd(
+       grp_cd   	varchar2(100)
      , nm     		varchar2(20)
      , reg_date	 	date
      , reg_user   	varchar2(60)

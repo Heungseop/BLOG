@@ -1,5 +1,5 @@
 
-insert into grp_code(
+insert into grp_cd(
    grp_cd   	
  , nm     		
  , reg_date	 
@@ -14,7 +14,87 @@ insert into grp_code(
          , sysdate	 
          , 'heungg' 
  );
-insert into grp_code(
+
+insert into cmmn_cd (
+              grp_cd  
+            , cd      
+            , nm
+            , up_cd
+            , str1
+            , str2
+            , ord_no
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_1'  
+            , 'menu_heung'
+            , '흥섭'    
+            , null   
+            , null
+            , null
+            , 10
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+insert into cmmn_cd (
+              grp_cd  
+            , cd      
+            , nm    
+            , up_cd
+            , str1
+            , str2
+            , ord_no  
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_1'  
+            , 'menu_chun_woo'
+            , '춘우'   
+            , null   
+            , null
+            , null
+            , 20
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+insert into cmmn_cd (
+              grp_cd  
+            , cd      
+            , nm    
+            , up_cd
+            , str1
+            , str2
+            , ord_no    
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_1'  
+            , 'menu_da_won'     
+            , '다원'
+            , null
+            , null
+            , null
+            , 30
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+
+insert into grp_cd(
    grp_cd   	
  , nm     		
  , reg_date	 
@@ -29,60 +109,26 @@ insert into grp_code(
          , sysdate	 
          , 'heungg' 
  );
-insert into COMMON_CODE (
+insert into cmmn_cd (
               grp_cd  
             , cd      
             , nm    
-            , str     
+            , up_cd
+            , str1
+            , str2
+            , ord_no  
             , reg_date
             , reg_user
             , mod_date
             , mod_user
             ) values (
-              'menu_1'  
-            , 1
-            , '흥섭'    
-            , 'menu_heung'     
-         , sysdate	 
-         , 'heungg'   
-         , sysdate	 
-         , 'heungg' 
-            )
-;
-insert into COMMON_CODE (
-              grp_cd  
-            , cd      
-            , nm    
-            , str     
-            , reg_date
-            , reg_user
-            , mod_date
-            , mod_user
-            ) values (
-              'menu_1'  
-            , 2
-            , '춘우'    
-            , 'menu_chun_woo'     
-         , sysdate	 
-         , 'heungg'   
-         , sysdate	 
-         , 'heungg' 
-            )
-;
-insert into COMMON_CODE (
-              grp_cd  
-            , cd      
-            , nm    
-            , str     
-            , reg_date
-            , reg_user
-            , mod_date
-            , mod_user
-            ) values (
-              'menu_1'  
-            , 3
-            , '다원'    
-            , 'menu_da_won'     
+              'menu_2'  
+            , '1'     
+            , 'script'
+            , 'menu_heung'
+            , null
+            , null
+            , 10
          , sysdate	 
          , 'heungg'   
          , sysdate	 
@@ -90,7 +136,278 @@ insert into COMMON_CODE (
             )
 ;
 
-insert into grp_code(
+insert into cmmn_cd (
+              grp_cd  
+            , cd      
+            , nm    
+            , up_cd
+            , str1
+            , str2
+            , ord_no  
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_2'  
+            , '2'     
+            , 'java'
+            , 'menu_heung'
+            , null
+            , null
+            , 20
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+
+insert into cmmn_cd (
+              grp_cd  
+            , cd      
+            , nm    
+            , up_cd
+            , str1
+            , str2
+            , ord_no  
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_2'  
+            , '3'     
+            , 'query'
+            , 'menu_heung'
+            , null
+            , null
+            , 30
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+
+insert into cmmn_cd (
+              grp_cd  
+            , cd      
+            , nm    
+            , up_cd
+            , str1
+            , str2
+            , ord_no  
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_2'  
+            , '4'     
+            , 'android'
+            , 'menu_heung'
+            , null
+            , null
+            , 40
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+
+
+insert into cmmn_cd (
+              grp_cd  
+            , cd      
+            , nm    
+            , up_cd
+            , str1
+            , str2
+            , ord_no  
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_2'  
+            , '5'     
+            , 'script'
+            , 'menu_chun_woo'
+            , null
+            , null
+            , 10
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+
+insert into cmmn_cd (
+              grp_cd  
+            , cd      
+            , nm    
+            , up_cd
+            , str1
+            , str2
+            , ord_no  
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_2'  
+            , '6'     
+            , 'JQuery'
+            , 'menu_chun_woo'
+            , null
+            , null
+            , 20
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+
+insert into cmmn_cd (
+              grp_cd  
+            , cd      
+            , nm    
+            , up_cd
+            , str1
+            , str2
+            , ord_no  
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_2'  
+            , '7'     
+            , 'AJAX'
+            , 'menu_chun_woo'
+            , null
+            , null
+            , 30
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+insert into cmmn_cd (
+              grp_cd  
+            , cd      
+            , nm    
+            , up_cd
+            , str1
+            , str2
+            , ord_no  
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_2'  
+            , '8'     
+            , 'HTML'
+            , 'menu_chun_woo'
+            , null
+            , null
+            , 40
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+
+insert into cmmn_cd (
+              grp_cd  
+            , cd      
+            , nm    
+            , up_cd
+            , str1
+            , str2
+            , ord_no  
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_2'  
+            , '9'     
+            , 'C#'
+            , 'menu_da_won'
+            , null
+            , null
+            , 10
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+insert into cmmn_cd (
+              grp_cd  
+            , cd      
+            , nm    
+            , up_cd
+            , str1
+            , str2
+            , ord_no  
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_2'  
+            , '10'     
+            , '맛집'
+            , 'menu_da_won'
+            , null
+            , null
+            , 20
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+insert into cmmn_cd (
+              grp_cd  
+            , cd      
+            , nm    
+            , up_cd
+            , str1
+            , str2
+            , ord_no  
+            , reg_date
+            , reg_user
+            , mod_date
+            , mod_user
+            ) values (
+              'menu_2'  
+            , '11'     
+            , 'arduino'
+            , 'menu_heung'
+            , null
+            , null
+            , 50
+         , sysdate	 
+         , 'heungg'   
+         , sysdate	 
+         , 'heungg' 
+            )
+;
+
+
+
+------------------------------------------------------------------------------
+insert into grp_cd(
    grp_cd   	
  , nm     		
  , reg_date	 
@@ -106,7 +423,7 @@ insert into grp_code(
          , 'heungg' 
  );
  
-insert into grp_code(
+insert into grp_cd(
    grp_cd   	
  , nm     		
  , reg_date	 
@@ -122,7 +439,7 @@ insert into grp_code(
          , 'heungg' 
  );
  
-insert into grp_code(
+insert into grp_cd(
    grp_cd   	
  , nm     		
  , reg_date	 
@@ -137,66 +454,4 @@ insert into grp_code(
          , sysdate	 
          , 'heungg' 
  );
- 
-insert into COMMON_CODE (
-              grp_cd  
-            , cd      
-            , nm    
-            , str     
-            , reg_date
-            , reg_user
-            , mod_date
-            , mod_user
-            ) values (
-              'menu_heung'  
-            , (select nvl(max(cd), 0) + 1 from COMMON_CODE where grp_cd = 'menu_heung')
-            , 'data base'  --, 'script'    , 'java'    , 'android'   
-            , null     
-         , sysdate	 
-         , 'heungg'   
-         , sysdate	 
-         , 'heungg' 
-            )
-;
---select * from COMMON_CODE;
-insert into COMMON_CODE (
-              grp_cd  
-            , cd      
-            , nm    
-            , str     
-            , reg_date
-            , reg_user
-            , mod_date
-            , mod_user
-            ) values (
-              'menu_chun_woo'  
-            , (select nvl(max(cd), 0) + 1 from COMMON_CODE where grp_cd = 'menu_chun_woo')
-            , 'html'  --, 'script'    , 'jquery'    , 'Ajax'   
-            , null     
-         , sysdate	 
-         , 'heungg'   
-         , sysdate	 
-         , 'heungg' 
-            )
-;
-insert into COMMON_CODE (
-              grp_cd  
-            , cd      
-            , nm    
-            , str     
-            , reg_date
-            , reg_user
-            , mod_date
-            , mod_user
-            ) values (
-              'menu_da_won'  
-            , (select nvl(max(cd), 0) + 1 from COMMON_CODE where grp_cd = 'menu_da_won')
-            , 'C#'   
-            , null     
-         , sysdate	 
-         , 'heungg'   
-         , sysdate	 
-         , 'heungg' 
-            )
-;
          
