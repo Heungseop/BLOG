@@ -13,9 +13,7 @@ public class BoardDao extends AbstractDAO{
 
 	@SuppressWarnings("unchecked")
 	public List<HashMap<String, Object>> selectBoardList(HashMap hm) throws Exception{
-		System.out.println("hm : " + hm);
-		System.out.println("board.selectBoardList dao : " + selectList("board.selectBoardList", hm));
-		return (List<HashMap<String, Object>>)selectList("board.selectBoardList", hm);
+		return (List<HashMap<String, Object>>)selectList("board.selectBoard", hm);
 	}
 //	@SuppressWarnings("unchecked")
 //	public List<Map<String, Object>> selectMidMenuList() throws Exception{

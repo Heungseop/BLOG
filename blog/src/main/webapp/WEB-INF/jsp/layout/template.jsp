@@ -67,7 +67,10 @@
     <!-- Toastr -->
     <script src="${pageContext.request.contextPath}/js/plugins/toastr/toastr.min.js"></script>
 
-
+    <!-- FooTable -->
+    <link href="${pageContext.request.contextPath}/css/plugins/footable/footable.core.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    
 <script type="text/javascript">
 	$(document).ready(function() {
 

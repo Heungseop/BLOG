@@ -38,7 +38,8 @@
 	                        <ul class="nav nav-second-level">
                    				<c:forEach items="${midMenuList }" var="midItem">
                    					<c:if test="${bigItem.CD == midItem.BIG_MENU_CD }" >
-		                            	<li><a href="#" onclick="menuClick('${midItem.BIG_MENU_CD }', ${midItem.MID_MENU_CD })">${midItem.MID_MENU_NM }</a></li>
+		                            	<li><a href="#" onclick="menuClick('${midItem.BIG_MENU_CD }', ${midItem.MID_MENU_CD }, '${midItem.MID_MENU_NM }')">${midItem.MID_MENU_NM }</a>
+		                            	</li>
                    					</c:if>
                     			</c:forEach>
 	                        </ul>
@@ -50,14 +51,19 @@
             </div>
         </nav>
 <script>
-
-function menuClick(big_menu_cd, mid_menu_cd){
+$(document).ready(function(){
+	$("#midMenuLi").onClick(function (){
+		alert("test");
+	});
+});
+function menuClick(big_menu_cd, mid_menu_cd, mid_menu_nm){
 
 		$.ajax({
 			   url: "${pageContext.request.contextPath}" + "/empty/board/boardList.do",
 			   type : "POST",
 			   data : { big_menu_cd : big_menu_cd
 				   	  , mid_menu_cd : mid_menu_cd
+				   	  
 				   	  },
 			   success: function(result) {
 				   console.log("success result : ", result);
@@ -80,6 +86,7 @@ function menuClick(big_menu_cd, mid_menu_cd){
 // 	               console.log("str : ", str);
 				   $("#body_div").empty();
 				   $("#body_div").append(result);
+				   $("#pageTitle").text(mid_menu_nm);
 			   },
 			   error: function(error) {
 			      console.log(error);

@@ -22,9 +22,8 @@ public class BoardController {
 	
 	@RequestMapping(value="/empty/board/boardList.do")
     public ModelAndView openSampleBoardList(@RequestParam String big_menu_cd, @RequestParam String mid_menu_cd) throws Exception{
+		System.out.println("BoardController openSampleBoardList");
     	ModelAndView mv = new ModelAndView("board/boardList");
-    	System.out.println( "big_menu_cd : " + big_menu_cd);
-    	System.out.println( "mid_menu_cd : " + mid_menu_cd);
     	
     	HashMap<String, String> hm = new HashMap<String, String>();
     	hm.put("big_menu_cd", big_menu_cd);
